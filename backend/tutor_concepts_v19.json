@@ -1,0 +1,34 @@
+{
+  "training_philosophy": "physical situation -> variables -> model -> equation -> solution -> interpretation",
+  "concept_modules": {
+    "graphing": {
+      "input_types": [
+        "mathematical function",
+        "physics model",
+        "data/table",
+        "verbal description"
+      ],
+      "rule": "classify before graphing"
+    },
+    "kinematics": {
+      "models": [
+        "constant velocity",
+        "constant acceleration",
+        "free fall"
+      ],
+      "warning": "position-time is linear only for constant velocity"
+    },
+    "momentum": {
+      "single_object": "p=mv",
+      "system": "conservation only when external impulse is negligible"
+    },
+    "energy": {
+      "core": "track energy changes between states",
+      "warning": "include nonconservative work when present"
+    },
+    "newton": {
+      "core": "net force causes acceleration",
+      "warning": "draw forces acting on one object only"
+    }
+  }
+}

@@ -1,0 +1,331 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2933;
+  background: #f5f7fa;
+}
+body { margin: 0; }
+.topbar {
+  background: #102a43;
+  color: white;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.topbar h1 { margin: 0 0 0.25rem 0; }
+.topbar p { margin: 0; color: #d9e2ec; }
+.topbar nav { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.topbar a { color: white; text-decoration: none; font-weight: 700; }
+.container { max-width: 1120px; margin: 0 auto; padding: 2rem; }
+.hero, .panel {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(16,42,67,0.08);
+  padding: 2rem;
+}
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.card { border: 1px solid #d9e2ec; border-radius: 12px; padding: 1rem; background: #f8fafc; }
+.card span { display: block; font-size: 2rem; font-weight: 700; margin-top: 0.4rem; }
+.button, button, .export-button {
+  display: inline-block;
+  border: none;
+  border-radius: 9px;
+  padding: 0.75rem 1rem;
+  color: white;
+  background: #2563eb;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+.button.secondary { background: #486581; }
+.story-form { display: grid; gap: 1rem; }
+label { display: grid; gap: 0.35rem; font-weight: 700; }
+input, textarea, select {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid #bcccdc;
+  border-radius: 8px;
+  font: inherit;
+  box-sizing: border-box;
+}
+.story-card { border: 1px solid #d9e2ec; border-radius: 12px; padding: 1rem; margin: 1rem 0; background: #fbfdff; }
+.inline-form { display: grid; grid-template-columns: 180px 1fr auto; gap: 0.5rem; align-items: center; }
+.filterbar a { margin-right: 1rem; }
+.export-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.export-button { text-align: center; background: #0f766e; }
+code { background: #eef2f7; padding: 0.15rem 0.35rem; border-radius: 4px; }
+@media (max-width: 720px) {
+  .inline-form { grid-template-columns: 1fr; }
+  .container { padding: 1rem; }
+}
+
+.feedback-box {
+  border-left: 4px solid #2563eb;
+  background: #eef6ff;
+  padding: 0.8rem 1rem;
+  margin: 0.75rem 0;
+  border-radius: 8px;
+}
+.compact-form {
+  margin-top: 0.75rem;
+}
+.button.small {
+  padding: 0.45rem 0.7rem;
+  font-size: 0.9rem;
+}
+details {
+  margin: 0.75rem 0;
+}
+summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+}
+th, td {
+  border: 1px solid #d9e2ec;
+  padding: 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: #f1f5f9;
+}
+.rubric-form {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.rubric-form textarea,
+.rubric-form button {
+  grid-column: 1 / -1;
+}
+
+/* QA Patch 04: classroom equation notation support */
+.equation-line { margin: 0.25rem 0; }
+.equation-line code {
+  display: inline-block;
+  padding: 0.25rem 0.4rem;
+  border-radius: 6px;
+  background: #f4f4f4;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.98rem;
+}
+.chat-card.student { border-left: 5px solid #7a7a7a; }
+.chat-card.assistant { border-left: 5px solid #2f5f9f; }
+.quick-chat form { display: inline-block; margin: 0.25rem; }
+.quick-chat button { white-space: nowrap; }
+table code, p code, li code { background: #f4f4f4; padding: 0.1rem 0.25rem; border-radius: 4px; }
+
+/* QA Patch 07: local math rendering, no external math library required */
+.equation-line {
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.55rem 0.7rem;
+  border-left: 4px solid #2f5f9f;
+  background: #f6f9ff;
+  border-radius: 8px;
+}
+.math-display {
+  display: block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 0.25rem;
+}
+.equation-line code {
+  display: block;
+  font-size: 0.88rem;
+  opacity: 0.75;
+  background: transparent;
+}
+.frac {
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 0.8em;
+  line-height: 1;
+  margin: 0 0.12em;
+}
+.frac span:first-child {
+  border-bottom: 1px solid currentColor;
+  padding: 0 0.15em 0.06em;
+}
+.frac span:last-child {
+  padding: 0.06em 0.15em 0;
+}
+.quick-chat form button { min-height: 2.5rem; }
+
+
+/* QA Patch 08: equation library and row-based chat transcript */
+.chat-thread { display: block; margin: 1.5rem 0; }
+.chat-thread .chat-card { display: block; width: 100%; box-sizing: border-box; margin: 0.85rem 0; }
+.chat-thread .chat-card.student { background: #f8fafc; border-left-color: #64748b; }
+.chat-thread .chat-card.assistant { background: #eef6ff; border-left-color: #2563eb; }
+.equation-category { margin: 2rem 0; }
+.equation-category h3 { border-bottom: 2px solid #d9e2ec; padding-bottom: 0.35rem; }
+.equation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+.equation-card, .equation-chip { border: 1px solid #d9e2ec; border-radius: 12px; padding: 1rem; background: #ffffff; box-shadow: 0 4px 14px rgba(16,42,67,0.05); }
+.equation-card h4 { margin-top: 0; }
+.equation-card code, .equation-chip code { display: block; margin: 0.5rem 0; white-space: normal; }
+.equation-mini-library { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+.equation-chip span { display: block; font-weight: 700; color: #102a43; }
+.inline-equation-form { margin-top: 0.75rem; }
+.inline-equation-form button.small, button.small { padding: 0.45rem 0.7rem; font-size: 0.85rem; }
+
+
+/* QA Patch 09: interactive textbook equation picker */
+.textbook-equation {
+  font-size: 1.35rem;
+  padding: 0.35rem 0.45rem;
+  background: #fbfdff;
+  border-radius: 8px;
+}
+.equation-card { cursor: default; }
+.equation-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; margin-top: 0.75rem; }
+.syntax-details summary { font-size: 0.9rem; color: #486581; }
+button.secondary { background: #486581; }
+.equation-card .use-equation { background: #0f766e; }
+#chat-message-box { min-height: 8rem; }
+.equation-chip code { font-family: Georgia, 'Times New Roman', serif; font-size: 1.05rem; }
+
+
+/* QA Patch 10: equation-button workflow fixes */
+.selected-equation-box { border-left: 5px solid #0f766e; background: #f0fdfa; }
+.equation-actions a.button.small { text-decoration: none; display: inline-block; }
+
+
+/* Patch 11: structured solution workspace and equation chat */
+.solution-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.solution-workspace-form textarea {
+  font-family: inherit;
+  line-height: 1.45;
+}
+.equation-chat-panel .chat-thread {
+  margin-top: 1rem;
+}
+.selected-equation-box {
+  border-left: 5px solid #2f6fed;
+}
+.equation-actions .button {
+  margin-right: .35rem;
+  margin-top: .35rem;
+}
+
+/* QA Patch 15: equation tutor graph cards */
+.equation-graph-card {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #d7e0ea;
+  border-radius: 14px;
+  background: #fbfdff;
+}
+.equation-graph-card svg {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  margin-top: 0.5rem;
+}
+.quick-equation-prompts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+}
+.quick-equation-prompts a {
+  text-decoration: none;
+}
+
+/* v25 equation typography: compact classroom display */
+.equation-line {
+  margin: 0.35rem 0;
+  padding: 0.45rem 0.65rem;
+}
+.equation-line .math-display {
+  display: inline-block;
+  font-size: 1.18rem;
+  line-height: 1.25;
+  margin: 0;
+}
+.math-display {
+  line-height: 1.25;
+}
+.equation-render-large {
+  font-size: 1.45rem;
+  line-height: 1.35;
+}
+.inline-frac {
+  white-space: nowrap;
+}
+.equation-preview-card .frac,
+.textbook-equation .frac {
+  font-size: 0.72em;
+}
+.graph-card{border:1px solid #d0d7de;border-radius:12px;padding:1rem;margin:1rem 0;background:#fff;}
+.graph-card h3{margin-top:0;}
+.quick-chat form button{cursor:pointer;}
+
+/* v37: chat usability improvements */
+.v37-chat-page { max-width: 1180px; }
+.v37-history-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: end;
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  background: rgba(255,255,255,0.96);
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+.v37-history-toolbar label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.95rem; }
+.v37-history-toolbar select { padding: 0.45rem; border-radius: 8px; border: 1px solid #c9d1d9; }
+.v37-chat-scroll {
+  max-height: 54vh;
+  overflow-y: auto;
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fbfdff;
+  margin-bottom: 0.75rem;
+}
+.v37-sticky-prompt {
+  position: sticky;
+  bottom: 0;
+  z-index: 20;
+  background: rgba(255,255,255,0.98);
+  border: 1px solid #d0d7de;
+  border-radius: 14px;
+  padding: 0.85rem;
+  margin-top: 0.75rem;
+  box-shadow: 0 -4px 18px rgba(0,0,0,0.07);
+}
+.v37-sticky-prompt textarea {
+  width: 100%;
+  min-height: 5.5rem;
+  resize: vertical;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+.v37-chat-message { scroll-margin-bottom: 12rem; }
+.v37-chat-message.student { border-left: 5px solid #6b7280; }
+.v37-chat-message.assistant { border-left: 5px solid #2563eb; }
+.v37-empty-history { padding: 1rem; }
