@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite
+*.sqlite3
+.env
+.venv/
+venv/
+.DS_Store
+backend/data/
+abk_pai_data/
+source_books/
+book_training_sets/
+archive_old_start_files/

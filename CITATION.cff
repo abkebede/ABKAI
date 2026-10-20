@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "ABK AI (ABK_PAI): Physics AI Assistant — Public Demonstration Release"
+type: software
+authors:
+  - family-names: "Kebede"
+    given-names: "Abebe"
+    orcid: "https://orcid.org/0000-0002-0500-9966"
+version: "100-public"
+date-released: 2026-10-20
