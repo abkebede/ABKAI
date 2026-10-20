@@ -1,0 +1,21 @@
+{
+  "version": "ABK_PAI_V100",
+  "status": "PASS",
+  "tests": {
+    "python_compilation": "PASS",
+    "application_startup": "PASS",
+    "v100_route_family": "PASS",
+    "visible_link_crawl": "PASS",
+    "no_visible_v96_v97_v98_v99_links": "PASS",
+    "canonical_tutor_problem_count_35": "PASS",
+    "approved_assignment_bank_count_700": "PASS",
+    "structured_tutor_feedback": "PASS",
+    "teacher_grade_and_feedback": "PASS",
+    "student_portfolio_grade_feedback": "PASS",
+    "not_listed_suggestions": "PASS",
+    "prompt_copy_label": "PASS",
+    "active_prompt_context_preserved": "PASS",
+    "spellcheck_attributes": "PASS",
+    "integrity_endpoint": "PASS"
+  }
+}
